@@ -51,7 +51,7 @@ export default {
 <style lang="scss" scoped>
   section {
     
-    
+  
     button {
       padding: 1.6rem 5rem;
       border: 1.5px solid black;
@@ -61,6 +61,7 @@ export default {
       font-size: 1.3rem;
       font-weight: 700;
       border-radius: 10px;
+      margin-top: 2rem;
     }
   }
 </style>

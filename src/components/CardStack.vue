@@ -3,10 +3,11 @@
         
         <article class="card-stack" >
             <Card  
-                v-for="stackCard in getCardStack" 
+                v-for="(stackCard,i) in getCardStack" 
                 :card="stackCard" 
                 :key="stackCard.id"
                 @click.native="showAnotherCard(stackCard.id)"
+                :style="cardStack(i)"
                 
             ></Card>
         </article>
@@ -23,6 +24,18 @@ export default {
     },
     props: {
         cards: Array
+    },
+
+    data() {
+        return {
+            cardStack(i) {
+                return {
+                    marginTop: i * 2 + "rem",
+                    '&:hover': 'transform: scale(1.1)',
+                    zIndex: i
+                }
+            }
+        }
     },
     
     methods: {
@@ -43,16 +56,17 @@ export default {
     .card-stack-container {
         width: 350px;
         margin: auto; 
+        height: 30rem;
         .card-stack {
             display: grid;
-            grid-auto-rows: 2.5rem;
-            
+            grid-auto-rows: 1.5rem;
             margin-top: 2rem;
-            margin-bottom: 13rem;
-            
-            
         }
         
+    }
+
+    .stackCard:hover {
+        transform: translate(-1rem);
     }
 
 </style>
