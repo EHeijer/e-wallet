@@ -13,5 +13,10 @@ export default {
 </script>
 
 <style>
-
+    h1 {
+        font-size: 2.2rem;
+        font-weight: bolder;
+        max-width: 15rem;
+        margin: auto;
+    }
 </style>

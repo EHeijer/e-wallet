@@ -1,9 +1,10 @@
 <template>
     <section class="container">
-        <h5>{{titleOfCard}}</h5>
-        <article class="card" :style="{background: card.color}" :class="{cardToAdd: addCardView}">
+        <h6>{{titleOfCard}}</h6>
+        <article class="card" :style="{background: card.color, color: card.textColor}" :class="{cardToAdd: addCardView}">
             <div class="symbols">
-                <img src="../assets/chip-dark.svg" alt="">
+                <img src="../assets/chip-dark.svg" alt="" v-if="card.showing">
+                <img src="../assets/chip-light.svg" alt="" v-else>
                 <img v-bind:src="showBitcoin" v-if="card.vendor === 'bitcoin'">
                 <img v-bind:src="showNinja" v-else-if="card.vendor === 'ninja'">
                 <img v-bind:src="showBlockchain" v-else-if="card.vendor === 'blockchain'">
@@ -12,12 +13,12 @@
             <div class="number">{{card.cardNumber}}</div>
             <article class="text">
                 <div>
-                    <h5>CARDHOLDER NAME</h5>
-                    <p>{{card.name}}</p>
+                    <p>CARDHOLDER NAME</p>
+                    <h3>{{card.name}}</h3>
                 </div>
-                <div>
-                    <h5>VALID THRU</h5>
-                    <p>{{card.valid}}</p>
+                <div class="valid">
+                    <p>VALID THRU</p>
+                    <h3>{{card.valid}}</h3>
                 </div>
             </article>
         </article>
@@ -59,9 +60,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-   
+    .stackCard {
+        color: rgb(49, 47, 47);
+    }
     .container{
-        
+        h6 {
+            color: grey;
+            font-size: .8rem;
+            margin-bottom: 10px;
+        }
         .card {
             background: #eba434;
             border-radius: 9px;
@@ -71,12 +78,13 @@ export default {
             height: 230px;
             width: 350px;
             margin: auto;
+            text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.616);
             .symbols {
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-start;
                 img {
-                    margin: 1rem;
+                    margin: 1rem 1rem .5rem 1rem;
                 }
                 .vendor {
                     height: 1rem;
@@ -85,6 +93,8 @@ export default {
             .number {
                 font-size: 1.8rem;
                 padding: 0;
+                font-family: 'PT Mono', monospace;
+                margin-bottom: .6rem;
             }
 
             .text {
@@ -94,14 +104,27 @@ export default {
                 text-align: left;
                 max-width: 95%;
                 margin: auto;
+
+                .valid {
+                    text-align: right;
+                }
             }
         }
     }
     h5 {
         margin: 0;
+        font-family: 'PT Mono', monospace;
+    }
+     h3 {
+        margin: 0;
+        font-family: 'PT Mono', monospace;
+        font-weight: 500;
+        font-size: 1.1rem;
     }
     p {
         margin-top: 0;
         margin-bottom: 0;
+        font-family: 'PT Mono', monospace;
+        font-size: .8rem;
     }
 </style>

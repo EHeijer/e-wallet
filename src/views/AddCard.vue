@@ -2,7 +2,7 @@
     <section>
         <Top title="ADD A NEW BANK CARD" addCardView />
         <div @click="changeColor">
-            <Card  titleOfCard="NEW CARD" :card="cardExample" addCardView/>
+            <Card class="card"  titleOfCard="NEW CARD" :card="cardExample" addCardView/>
         </div>
         <CardForm :card="cardExample" @addCard="addCard"/>
     </section>
@@ -26,9 +26,9 @@ export default {
             name: "FIRSTNAME LASTNAME",
             valid: "MM/YY",
             ccv: "",
-            color: "#bab9b5",
+            color: "#d6d0d0",
             showing: false,
-            vendor: ""
+            vendor: "bitcoin"
              
           },
 
@@ -53,5 +53,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    
+    .card {
+        color: black;
+    }
 </style>

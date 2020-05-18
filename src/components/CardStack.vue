@@ -31,7 +31,6 @@ export default {
             cardStack(i) {
                 return {
                     marginTop: i * 2 + "rem",
-                    '&:hover': 'transform: scale(1.1)',
                     zIndex: i
                 }
             }
@@ -60,13 +59,11 @@ export default {
         .card-stack {
             display: grid;
             grid-auto-rows: 1.5rem;
-            margin-top: 2rem;
+            margin-top: 1.1rem;
         }
         
     }
 
-    .stackCard:hover {
-        transform: translate(-1rem);
-    }
+  
 
 </style>

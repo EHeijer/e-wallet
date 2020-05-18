@@ -2,11 +2,11 @@
     <article class="form">
         <div class="number">
             <label for="number">CARD NUMBER</label>
-            <input type="text" v-model="cardToAdd.cardNumber"/>
+            <input type="number" v-model="cardToAdd.cardNumber"/>
         </div>
         <div class="name">
             <label for="name">CARDHOLDER NAME</label>
-            <input type="text" v-model="cardToAdd.name" placeholder="FIRSTNAME LASTNAME"/>
+            <input type="text" v-model="cardToAdd.name"/>
         </div>
         <div class="valid-ccv">
             <div class="valid">
@@ -15,7 +15,7 @@
             </div> 
             <div class="ccv">
                 <label for="ccv">CCV</label>
-                <input type="text" v-model="cardToAdd.ccv"/>
+                <input type="number" v-model="cardToAdd.ccv"/>
             </div>   
         </div>
         <div class="vendor">
@@ -44,23 +44,22 @@ export default {
 
    methods: {
         addCard(){
+            if(this.$root.cards.length >= 6){
+                alert("You can't add more cards");
+                return
+            }
             this.$emit("addCard", this.cardToAdd);
-            this.cardToAdd = { 
-               id: this.$root.cards.length+1,
-               cardNumber: "",
-               name: "",
-               valid: "",
-               ccv: "",
-               color: "#d11563",
-               showing: false,
-               vendor: ""  
-           }
-        }
+        },
+
     }
 }
 </script>
 
 <style lang="scss" scoped>
+    input {
+        font-family: 'PT Mono', monospace;
+        
+    }
     .form {
         margin: 2rem auto;
         display: grid;
@@ -72,6 +71,7 @@ export default {
             display: flex;
             flex-direction: column;
             margin-bottom: 1rem;
+            
 
             label {
                 font-size: .8rem;
@@ -152,7 +152,7 @@ export default {
                 appearance: none;
                 background-image: url(../assets/arrow.png);
                 background-repeat: no-repeat;
-                background-position: 20rem 1.6rem;
+                background-position: 19rem 1.6rem;
                 option {
                     width: 100%;
                     padding: 0;
