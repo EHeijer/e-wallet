@@ -2,7 +2,7 @@
   <section>
     <Top title="E-WALLET" />
     <Card titleOfCard="ACTIVE CARD" :card="getShowingCard"/>
-    <CardStack @showAnotherCard="showAnotherCard" :cards="cards"/>
+    <CardStack class="card-stack" @showAnotherCard="showAnotherCard" :cards="cards"/>
     <router-link to="/addCard"><button>ADD A NEW CARD</button></router-link>
 
   </section>
@@ -49,9 +49,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  section {
-    
   
+    .card-stack {
+      margin-bottom: 1rem;
+    }
+
     button {
       padding: 1.6rem 5rem;
       border: 1.5px solid black;
@@ -61,7 +63,6 @@ export default {
       font-size: 1.3rem;
       font-weight: 700;
       border-radius: 10px;
-      margin-top: 2rem;
     }
-  }
+  
 </style>
