@@ -75,10 +75,10 @@ export default {
             padding: 0;
             box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
             line-height: 1.6;
-            height: 230px;
-            width: 350px;
+            height: 220px;
+            width: 330px;
             margin: auto;
-            text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.616);
+            
             .symbols {
                 display: flex;
                 justify-content: space-between;
@@ -91,7 +91,7 @@ export default {
                 }
             }
             .number {
-                font-size: 1.8rem;
+                font-size: 1.7rem;
                 padding: 0;
                 font-family: 'PT Mono', monospace;
                 margin-bottom: .6rem;

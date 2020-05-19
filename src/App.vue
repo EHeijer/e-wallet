@@ -12,6 +12,9 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #nav {

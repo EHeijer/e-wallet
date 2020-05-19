@@ -65,20 +65,20 @@ export default {
         display: grid;
         justify-content: center;
         text-align: left;
-        width: 350px;
+        width: 330px;
         
         .number {
             display: flex;
             flex-direction: column;
+            width: 330px;
+            margin: auto;
             margin-bottom: 1rem;
-            
-
             label {
                 font-size: .8rem;
             }
             input {
                 box-sizing: border-box;
-               padding: 1.6rem 0 1.6rem .5rem;
+                padding: 1.4rem 0 1.4rem 0rem;
                 border-radius: 10px;
                 border: solid rgb(110, 110, 110) 1.5px;
             }
@@ -87,6 +87,8 @@ export default {
         .name {
             display: flex;
             flex-direction: column;
+            width: 330px;
+            margin: auto;
             margin-bottom: 1rem;
 
             label {
@@ -104,7 +106,8 @@ export default {
             display: grid;
             grid-template-columns: 45% 45%; 
             justify-content: space-between;
-
+            width: 330px;
+            margin: auto;
             .valid {
                 display: flex;
                 flex-direction: column;
@@ -114,7 +117,7 @@ export default {
                 }
                 input {
                 
-                    padding: 1.6rem 0 1.6rem .5rem;
+                    padding: 1.3rem 0 1.3rem .5rem;
                     border-radius: 10px;
                     border: solid rgb(110, 110, 110) 1.5px;
                 }
@@ -122,11 +125,12 @@ export default {
             .ccv {
                 display: flex;
                 flex-direction: column;
+                
                 label {
                     font-size: .8rem;
                 }
                 input {
-                    padding: 1.6rem 0 1.6rem .5rem;
+                    padding: 1.3rem 0 1.3rem .5rem;
                     border-radius: 10px;
                     border: solid rgb(110, 110, 110) 1.5px;
                 }
@@ -136,6 +140,8 @@ export default {
         .vendor {
             display: flex;
             flex-direction: column;
+            width: 330px;
+            margin: auto;
             margin-top: 1rem;
 
             label {
@@ -152,7 +158,7 @@ export default {
                 appearance: none;
                 background-image: url(../assets/arrow.png);
                 background-repeat: no-repeat;
-                background-position: 19rem 1.6rem;
+                background-position: 18rem 1.6rem;
                 option {
                     width: 100%;
                     padding: 0;

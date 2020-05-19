@@ -49,13 +49,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  
+    
     .card-stack {
       margin-bottom: 1rem;
     }
 
     button {
-      padding: 1.6rem 5rem;
+      padding: 1.3rem 4rem;
       border: 1.5px solid black;
       text-align: center;
       text-decoration: none;
