@@ -23,6 +23,14 @@ new Vue({
 
     getCardStack(){
       return this.cards.filter((card) => !card.showing)
+    },
+    
+    deleteCard(card) {
+      this.cards.splice(this.cards.indexOf(card), 1)
+    },
+
+    getCard(id) {
+      return this.cards.find((card) => card.id == id)
     }
   },
   router,

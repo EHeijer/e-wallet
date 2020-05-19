@@ -55,7 +55,8 @@ export default {
         showEvil() {
             return require('../assets/vendor-' + this.evil)
         }
-    }
+    },
+    
 }
 </script>
 
