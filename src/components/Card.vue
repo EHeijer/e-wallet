@@ -3,7 +3,7 @@
         <h6>{{titleOfCard}}</h6>
         <article class="card" :style="{background: card.color, color: card.textColor}" :class="{cardToAdd: addCardView}">
             <div class="symbols">
-                <img src="../assets/chip-dark.svg" alt="" v-if="card.showing">
+                <img src="../assets/chip-dark.svg" alt="" v-if="card.showing || addCardView">
                 <img src="../assets/chip-light.svg" alt="" v-else>
                 <img v-bind:src="showBitcoin" v-if="card.vendor === 'bitcoin'">
                 <img v-bind:src="showNinja" v-else-if="card.vendor === 'ninja'">

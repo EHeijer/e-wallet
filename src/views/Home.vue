@@ -2,7 +2,7 @@
   <section>
     <Top title="E-WALLET" />
     <Card titleOfCard="ACTIVE CARD" :card="getShowingCard"/>
-    <CardStack class="card-stack" @showAnotherCard="showAnotherCard" :cards="cards"/>
+    <CardStack class="card-stack" :cards="cards"/>
     <router-link to="/addCard"><button>ADD A NEW CARD</button></router-link>
 
   </section>
@@ -22,27 +22,17 @@ export default {
     CardStack
   },
 
-  data() {
-    return {
-      cards: this.$root.cards
-    }
-  },
-
   methods: {
-    showAnotherCard(payload) {
-      for(let card of this.cards){
-        if(card.id != payload){
-          card.showing = false;
-        }else {
-          card.showing = true;
-        }
-      }
-    }
+    
   },
 
   computed: {
     getShowingCard() {
-      return this.$root.getShowingCard();
+      return this.$store.getters.getShowingCard
+    },
+
+    cards() {
+      return this.$store.state.cards
     }
   }
 }

@@ -44,11 +44,12 @@ export default {
 
    methods: {
         addCard(){
-            if(this.$root.cards.length >= 6){
+            if(this.$store.state.cards.length >= 6){
                 alert("You can't add more cards");
                 return
             }
-            this.$emit("addCard", this.cardToAdd);
+            this.$store.dispatch('addCard', this.cardToAdd)
+            this.$router.push("/");
         },
 
     }

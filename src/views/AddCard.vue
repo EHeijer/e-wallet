@@ -4,7 +4,7 @@
         <div @click="changeColor">
             <Card class="card"  titleOfCard="NEW CARD" :card="cardExample" addCardView/>
         </div>
-        <CardForm :card="cardExample" @addCard="addCard"/>
+        <CardForm :card="cardExample"/>
     </section>
 </template>
 <script>
@@ -37,12 +37,6 @@ export default {
   },
 
   methods: {
-      addCard(cardToAdd) {
-        cardToAdd.id = this.$root.cards.length+1;
-        this.$root.cards.push(cardToAdd);
-        this.$router.push("/");
-      },
-
       changeColor() {
           let randomColor = this.colors[Math.floor(Math.random() * this.colors.length)];
           return this.cardExample.color = randomColor; 

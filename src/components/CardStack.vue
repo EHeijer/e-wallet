@@ -39,13 +39,13 @@ export default {
     
     methods: {
         showAnotherCard(id) {
-            this.$emit("showAnotherCard", id);
+            this.$store.dispatch('showAnotherCard', id)
         }
     },
 
     computed: {
         getCardStack() {
-            return this.$root.getCardStack();
+            return this.$store.getters.getCardStack
         }
     }
 }
