@@ -1,6 +1,5 @@
 <template>
     <section class="card-stack-container">
-        
         <article class="card-stack" >
             <Card  
                 v-for="(stackCard,i) in getCardStack" 
@@ -8,12 +7,8 @@
                 :key="stackCard.id"
                 @click.native="showAnotherCard(stackCard.id)"
                 :style="cardStack(i)"
-                
             ></Card>
         </article>
-        
-        
-
     </section>
 </template>
 <script>

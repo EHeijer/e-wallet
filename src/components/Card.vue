@@ -5,10 +5,7 @@
             <div class="symbols">
                 <img src="../assets/chip-dark.svg" alt="" v-if="card.showing || addCardView">
                 <img src="../assets/chip-light.svg" alt="" v-else>
-                <img v-bind:src="showBitcoin" v-if="card.vendor === 'bitcoin'">
-                <img v-bind:src="showNinja" v-else-if="card.vendor === 'ninja'">
-                <img v-bind:src="showBlockchain" v-else-if="card.vendor === 'blockchain'">
-                <img v-bind:src="showEvil" v-else-if="card.vendor === 'evil'">
+                <img :src="require(`@/assets/vendor-${card.vendor}.svg`)" alt="">
             </div>
             <div class="number">{{card.cardNumber}}</div>
             <article class="text">
@@ -33,30 +30,8 @@ export default {
     },
     data() {
         return {
-            bitcoin: "bitcoin.svg",
-            ninja: "ninja.svg",
-            blockchain: "blockchain.svg",
-            evil: "evil.svg"
         }
     },
-    computed: {
-        showBitcoin() {
-            return require('../assets/vendor-' + this.bitcoin)
-        },
-
-        showNinja() {
-            return require('../assets/vendor-' + this.ninja)
-        },
-
-        showBlockchain() {
-            return require('../assets/vendor-' + this.blockchain)
-        },
-
-        showEvil() {
-            return require('../assets/vendor-' + this.evil)
-        }
-    },
-    
 }
 </script>
 

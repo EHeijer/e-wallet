@@ -11,8 +11,7 @@ export default new Vuex.Store({
       {"id": 3,"cardNumber": "1234 5678 9101 1123","name": "CHRISTOFFER WALLENBERG","valid": "12/22","ccv": "123","color": "#9433f5","showing": false,"vendor": "blockchain","textColor": "black"},
       {"id": 4,"cardNumber": "1234 5678 9101 1123","name": "CHRISTOFFER WALLENBERG","valid": "12/22","ccv": "123","color": "#d11563","showing": false,"vendor": "evil","textColor": "#ada2a1"}
     ],
-
-  
+    colors: ["#49ab09", "#09aba0", "#ab091c", "#0e09ab", "#616362"]
   },
 
   mutations: {
@@ -31,6 +30,7 @@ export default new Vuex.Store({
         }
       }
     },
+
   },
   actions: {
 
